@@ -1,0 +1,47 @@
+@use 'config/variables' as variables
+
+.info
+
+  &-grid
+    max-width: 148rem
+    margin: 0 auto
+    display: grid
+    gap: 2rem
+    @media screen and ( min-width: 450px )
+      gap: 6rem
+      grid-template-columns: repeat(2, 1fr)
+    &__item
+      position: relative
+
+  &-content
+    &__title
+      @media screen and ( min-width: 450px )
+        width: 80%
+    &__image
+      width: 3rem
+      margin-top: 1rem
+      @media screen and ( min-width: 450px )
+        width: 7.2rem
+        margin-top: 3rem
+
+  &__button
+    display: block
+    margin-top: 3rem
+    @media screen and ( min-width: 450px )
+      margin-top: 6rem
+
+  &-container
+    height: 100%
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    gap: 2rem
+    &__paragraph
+      overflow: hidden
+      height: 18rem
+      @media screen and ( min-width: 450px )
+        height: 35rem
+      &.active
+        height: auto
+    &__button
+      cursor: pointer

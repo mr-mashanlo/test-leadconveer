@@ -1,0 +1,24 @@
+@use 'config/variables' as variables
+
+.banner
+  &-card
+    background: variables.$dark-gray
+    color: variables.$white
+    @media screen and ( min-width: 450px )
+      padding: 10rem 12rem
+      display: flex
+      align-items: center
+      justify-content: space-between
+      gap: 12rem
+    &__content
+      @media screen and ( min-width: 450px )
+        width: 50%
+    &__button
+      margin-top: 4rem
+    &__art
+      display: none
+      @media screen and ( min-width: 450px )
+        display: block
+        width: 50%
+    &__image
+      width: 100%

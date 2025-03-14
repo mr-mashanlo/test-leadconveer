@@ -1,0 +1,129 @@
+@use 'config/variables' as variables
+
+html
+  font-size: calc(100vw / 375 * 10)
+  @media screen and ( min-width: 450px )
+    font-size: calc(100vw / 1920 * 10)
+  @media screen and ( min-width: 1920px )
+    font-size: 10px
+
+body
+  font-family: 'Inter', sans-serif
+  line-height: 1.2
+  font-size: 1.4rem
+  color: variables.$dark-gray
+  @media screen and ( min-width: 450px )
+    font-size: 2.4rem
+
+.container
+  width: 100%
+  max-width: 180rem
+  margin: 0 auto
+  padding: 0 1rem
+
+.section
+  padding: 3rem 0
+  @media screen and ( min-width: 450px )
+    padding: 6rem 0
+  &-header
+    text-align: center
+    &__subtitle
+      margin-top: 2rem
+  &-content
+    margin-top: 2rem
+    @media screen and ( min-width: 450px )
+      margin-top: 4rem
+
+.button
+  display: inline-block
+  width: 100%
+  padding: 1rem
+  background: variables.$orange
+  color: variables.$white
+  border-radius: 1rem
+  text-align: center
+  text-transform: uppercase
+  @media screen and ( min-width: 450px )
+    padding: 2rem
+    border-radius: 2rem
+
+.card
+  padding: 2rem
+  border-radius: 1.5rem
+  background: variables.$light-gray
+  @media screen and ( min-width: 450px )
+    border-radius: 4rem
+    padding: 4rem
+  &--space
+    padding: 1rem
+    @media screen and ( min-width: 450px )
+      padding: 4rem
+  &__text
+    margin-top: 2rem
+  &__paragraph
+    margin-top: 2rem
+    @media screen and ( min-width: 450px )
+      margin-top: 3rem
+  &__footer
+    margin-top: 3rem
+    @media screen and ( min-width: 450px )
+      margin-top: 4rem
+
+.text
+  &-orange
+    color: variables.$orange
+  &-gray
+    color: variables.$gray
+  &-gradient
+    background: -webkit-linear-gradient(45deg, #FF6600 0%, #F26659 27.4%, #F06177 37.4%, #E65D97 48.4%, #CA46D2 71.4%, #8D13F9 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+.title
+  font-weight: 700
+  font-family: "Montserrat", sans-serif
+  &--xxl
+    font-size: 3rem
+    @media screen and ( min-width: 450px )
+      font-size: 8rem
+      line-height: 1
+  &--xl
+    font-size: 2.2rem
+    @media screen and ( min-width: 450px )
+      line-height: 1.1
+      font-size: 4.8rem
+  &--lg
+    font-size: 2rem
+    @media screen and ( min-width: 450px )
+      line-height: 1.17
+      font-size: 3.6rem
+
+.subtitle
+  font-size: 1.6rem
+  @media screen and ( min-width: 450px )
+    font-size: 3.2rem
+
+.rating
+  display: flex
+  align-items: center
+  gap: .5rem
+  &__image
+    width: 2.5rem
+    @media screen and ( min-width: 450px )
+      width: 5rem
+
+.paragraph
+  p, ul, ol, li
+    margin-top: 1rem
+    @media screen and ( min-width: 450px )
+      margin-top: 2rem
+  ul, ol
+    margin-left: 3rem
+  ul
+    list-style-type: disc
+  ol
+    list-style-type: decimal
+  *:first-child
+    margin-top: 0
+
+

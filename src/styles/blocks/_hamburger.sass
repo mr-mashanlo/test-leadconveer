@@ -1,0 +1,74 @@
+@use 'sass:math'
+@use 'sass:list'
+
+$hamburger-size: 2.5rem
+$hamburger-thickness: .2rem
+$hamburger-color: #FFFFFF
+$hamburger-extra-transition-rules: &
+$hamburger-width: $hamburger-size
+$hamburger-bar-size: $hamburger-size
+$hamburger-color-hover: $hamburger-color
+$hamburger-color-active: $hamburger-color
+$hamburger-animation-speed: 1
+$hamburger-padding: math.round(math.div($hamburger-size, 10))
+$hamburger-bar-spacing: math.div($hamburger-size, 5)
+$hamburger-easing: cubic-bezier(0.645, 0.045, 0.355, 1)
+$hamburger-easing-in: cubic-bezier(0.55, 0.055, 0.675, 0.19)
+$hamburger-easing-out: cubic-bezier(0.215, 0.61, 0.355, 1)
+$root-two: math.sqrt(2)
+
+@mixin hamburger-bar()
+  content: ""
+  display: block
+  width: 100%
+  height: $hamburger-thickness
+  background-color: $hamburger-color
+  position: absolute
+
+.hamburger
+  $base-transitions: $hamburger-easing
+  display: inline-block
+  height: $hamburger-size
+  width: $hamburger-width
+  padding: $hamburger-padding
+  transition: list.append($base-transitions, $hamburger-extra-transition-rules)
+  border: none
+  outline: none
+  background: none
+  cursor: pointer
+  &:focus
+    outline: 0
+  &:hover .bar
+    background-color: $hamburger-color-hover
+  &.active .bar
+    background-color: $hamburger-color-active
+  .inner
+    width: 100%
+    margin: 0
+    margin-top: math.div(-$hamburger-thickness, 2)
+    position: relative
+    top: 50%
+  .bar
+    @include hamburger-bar
+    &:nth-child(1)
+      top: -$hamburger-bar-spacing
+    &:nth-child(3)
+      top: $hamburger-bar-spacing
+
+  &--simple
+    .bar
+      transition: transform math.div(0.3s, $hamburger-animation-speed) $hamburger-easing
+      &:nth-child(1)
+        top: 0
+        transform: translate3d(0, -$hamburger-bar-spacing, 0)
+      &:nth-child(2)
+        top: 0
+        transform: translate3d(0, $hamburger-bar-spacing, 0)
+      &:nth-child(3)
+        display: none
+    &.active
+      .bar
+        &:nth-child(1)
+          transform: rotate(-45deg) translate3d(0, 0, 0)
+        &:nth-child(2)
+          transform: rotate(45deg) translate3d(0, 0, 0)

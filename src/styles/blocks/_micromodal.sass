@@ -1,0 +1,66 @@
+@keyframes fadeIn
+    from
+      opacity: 0
+    to
+      opacity: 1
+
+@keyframes fadeOut
+    from
+      opacity: 1
+    to
+      opacity: 0
+
+@keyframes slideIn
+  from
+    transform: translateY(15%)
+  to
+    transform: translateY(0)
+
+
+@keyframes slideOut
+  from
+    transform: translateY(0)
+  to
+    transform: translateY(-15%)
+
+.modal
+  display: none
+
+  &.is-open
+    display: block
+
+  &__overlay
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 100
+    background: rgba(0,0,0,0.6)
+    display: flex
+    justify-content: center
+    align-items: center
+    will-change: transform
+
+  &__container
+    width: 100%
+    max-width: 100rem
+    max-height: 100vh
+    margin: 1rem
+    padding: 3rem
+    border-radius: 1rem
+    background-color: #fff
+    overflow-y: auto
+    will-change: transform
+
+  &[aria-hidden='false']
+    .modal__overlay
+      animation: fadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1)
+    .modal__container
+      animation: slideIn .3s cubic-bezier(0, 0, .2, 1)
+
+  &[aria-hidden='true']
+    .modal__overlay
+      animation: fadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1)
+    .modal__container
+      animation: slideOut .3s cubic-bezier(0, 0, .2, 1)

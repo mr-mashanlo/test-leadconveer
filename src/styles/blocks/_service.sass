@@ -1,0 +1,30 @@
+@use 'config/variables' as variables
+
+.service
+
+  &-list
+    max-width: 148rem
+    margin: 0 auto
+    display: grid
+    gap: 1rem
+    @media screen and ( min-width: 450px )
+      gap: 2rem
+      grid-template-columns: repeat(2, 1fr)
+
+  &-card
+    position: relative
+    &::before
+      content: ''
+      display: block
+      width: 2.5rem
+      height: 2.5rem
+      position: absolute
+      top: 2rem
+      right: 2rem
+      transform: rotate(-15deg)
+      background: url( '../images/star-1.svg' ) center / contain no-repeat
+      @media screen and ( min-width: 450px )
+        width: 5rem
+        height: 5rem
+        top: 4rem
+        right: 4rem

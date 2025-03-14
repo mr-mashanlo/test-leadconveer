@@ -1,0 +1,12 @@
+# Folders
+/node_modules
+
+# Files
+.env
+package-lock.json
+
+# Editor directories and files
+.git
+.idea
+.vscode
+.DS_Store

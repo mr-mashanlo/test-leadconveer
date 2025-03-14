@@ -1,0 +1,39 @@
+@use 'config/variables' as variables
+
+.contact
+  &-card
+    padding: 0
+    display: grid
+    overflow: hidden
+    @media screen and ( min-width: 450px )
+      padding: 0
+      grid-template-columns: repeat(2, 1fr)
+    &__content
+      padding: 2rem
+      @media screen and ( min-width: 450px )
+        padding: 7rem
+    &__paragraph
+      margin-top: 1.5rem
+      display: flex
+      flex-direction: column
+      gap: .5rem
+      @media screen and ( min-width: 450px )
+        gap: 1rem
+        margin-top: 3rem
+    &__image
+      width: 100%
+      height: 100%
+      border-radius: 1.5rem
+      @media screen and ( min-width: 450px )
+        border-radius: 4rem
+
+  &-message
+    width: 90%
+    display: flex
+    gap: 1rem
+    @media screen and ( min-width: 450px )
+      width: 75%
+    &__icon
+      width: 2.5rem
+      @media screen and ( min-width: 450px )
+        width: 6.5rem

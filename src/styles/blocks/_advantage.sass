@@ -1,0 +1,49 @@
+@use 'config/variables' as variables
+
+.advantage
+
+  &-list
+    display: grid
+    gap: 1rem
+    @media screen and ( min-width: 450px )
+      gap: 2rem
+      grid-template-columns: repeat(2, 1fr)
+
+  &-card
+    display: flex
+    justify-content: space-between
+    overflow: hidden
+    position: relative
+    &__content
+      width: 65%
+      @media screen and ( min-width: 450px )
+        width: 46rem
+        padding: 2rem 0
+    &__title
+      display: inline-block
+      position: relative
+      &::after
+        content: ''
+        display: block
+        width: 2.5rem
+        height: 2.5rem
+        position: absolute
+        top: -.5rem
+        right: -6rem
+        background: url('../images/star-1.svg') center / contain no-repeat
+        transform: rotate(15deg)
+        @media screen and ( min-width: 450px )
+          width: 5rem
+          height: 5rem
+          right: -8rem
+    &__image
+      height: 12rem
+      object-fit: cover
+      position: absolute
+      bottom: 0
+      right: 0
+      @media screen and ( min-width: 450px )
+        height: 35rem
+        position: static
+        margin: -4rem -4rem -4rem 0
+

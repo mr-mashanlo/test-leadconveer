@@ -1,0 +1,39 @@
+@use 'config/variables' as variables
+
+.intro
+  background: variables.$light-gray
+  @media screen and ( min-width: 450px )
+    padding: 11rem 0
+
+  &-box
+    display: grid
+    gap: 4rem
+    @media screen and ( min-width: 450px )
+      grid-template-columns: repeat(2, 1fr)
+      align-items: center
+      gap: 13rem
+
+  &-content
+    &__desc
+      margin-top: 2rem
+      display: flex
+      align-items: center
+      gap: 1  rem
+      @media screen and ( min-width: 450px )
+        margin-top: 4rem
+    &__subtitle
+      max-width: 55rem
+    &__button
+      margin-top: 2rem
+      @media screen and ( min-width: 450px )
+        margin-top: 4rem
+    &__icon
+      width: 4rem
+      height: 4rem
+      @media screen and ( min-width: 450px )
+        width: 7.2rem
+        height: 7.2rem
+
+  &-art
+    &__image
+      width: 100%

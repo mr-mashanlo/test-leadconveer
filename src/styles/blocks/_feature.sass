@@ -1,0 +1,51 @@
+@use 'config/variables' as variables
+
+.feature
+
+  &-step
+    margin-top: 4rem
+    display: grid
+    gap: 1rem
+    @media screen and ( min-width: 450px )
+      gap: 2rem
+      grid-template-columns: repeat(3, 1fr)
+    &-card
+      height: 100%
+      position: relative
+      &::before
+        content: ''
+        display: block
+        width: 2.5rem
+        height: 2.5rem
+        position: absolute
+        top: 2rem
+        right: 2rem
+        transform: rotate(-15deg)
+        background: url( '../images/star-2.svg' ) center / contain no-repeat
+        @media screen and ( min-width: 450px )
+          width: 5rem
+          height: 5rem
+          top: 4rem
+          right: 4rem
+      &__desc
+        margin-top: 1.2rem
+
+  &-benefit
+    margin-top: 2rem
+    display: grid
+    gap: 1rem
+    @media screen and ( min-width: 450px )
+      gap: 2rem
+      grid-template-columns: repeat(5, 1fr)
+    &-card
+      height: 100%
+      @media screen and ( min-width: 450px )
+        padding: 3rem
+      &__image
+        width: 2.5rem
+        height: 2.5rem
+        @media screen and ( min-width: 450px )
+          width: 5rem
+          height: 5rem
+
+

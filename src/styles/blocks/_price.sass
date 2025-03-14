@@ -1,0 +1,72 @@
+@use 'config/variables' as variables
+
+.price
+
+  &-list
+    display: grid
+    gap: 1rem
+    @media screen and ( min-width: 450px )
+      gap: 2rem
+      grid-template-columns: repeat(3, 1fr)
+
+  &-card
+    height: 100%
+    @media screen and ( min-width: 450px )
+      display: flex
+      flex-direction: column
+    &--dark-theme
+      color: variables.$white
+      background: variables.$dark-gray
+      .price-card__name
+        border: .1rem solid variables.$white
+        &::before
+          background: url( '../images/star-3.svg' ) center / contain no-repeat
+      .price-advantage__item::before
+        background: url( '../images/icon-white-check.svg' ) center / contain no-repeat
+    &__name
+      display: inline-block
+      padding: .7rem 1.4rem
+      border: .1rem solid variables.$dark-gray
+      border-radius: 1rem
+      background: rgba(#ffffff, 0.1)
+      align-self: flex-start
+      position: relative
+      @media screen and ( min-width: 450px )
+        padding: 1rem 2rem
+        border-radius: 2rem
+      &::before
+        content: ''
+        display: block
+        width: 3.5rem
+        height: 3.5rem
+        position: absolute
+        top: 0
+        right: -5rem
+        transform: rotate(15deg)
+        background: url( '../images/star-2.svg' ) center / contain no-repeat
+        @media screen and ( min-width: 450px )
+          width: 5rem
+          height: 5rem
+          right: -7rem
+
+  &-advantage
+    margin-bottom: auto
+    &__item
+      margin-top: 1rem
+      display: flex
+      align-items: flex-start
+      gap: 1rem
+      @media screen and ( min-width: 450px )
+        margin-top: 2rem
+        gap: 1.6rem
+      &::before
+        content: ''
+        display: block
+        width: 1.5rem
+        height: 1.5rem
+        background: red
+        background: url( '../images/icon-black-check.svg' ) center / contain no-repeat
+        flex-shrink: 0
+        @media screen and ( min-width: 450px )
+          width: 2.5rem
+          height: 2.5rem

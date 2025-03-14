@@ -1,0 +1,23 @@
+.about
+  &-card
+    max-width: 148rem
+    margin: 0 auto
+    display: grid
+    gap: 1rem
+    @media screen and ( min-width: 450px )
+      grid-template-columns: repeat(2, 1fr)
+      gap: 6rem
+    &__desc
+      max-width: 73rem
+      @media screen and ( min-width: 450px )
+        margin-top: 4rem
+      > p
+        margin-top: 2rem
+    &__art
+      display: none
+      @media screen and ( min-width: 450px )
+        display: flex
+        align-items: flex-start
+    &__image
+      width: 100%
+      object-fit: contain

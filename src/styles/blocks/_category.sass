@@ -1,0 +1,25 @@
+@use 'config/variables' as variables
+
+.category
+  background: variables.$light-gray
+  border-radius: 0 0 1.5rem 1.5rem
+  @media screen and ( min-width: 450px )
+    border-radius: 0 0 4rem 4rem
+  &__button
+    height: 100%
+    padding: 1rem 1rem
+    font-size: 1.2rem
+    border-radius: 1.5rem 1.5rem 0 0
+    background: variables.$white
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    @media screen and ( min-width: 450px )
+      padding: 3rem 2rem
+      border-radius: 4rem 4rem 0 0
+      font-size: 2rem
+
+  .swiper-slide
+    width: auto
+    height: auto

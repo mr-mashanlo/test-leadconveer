@@ -1,0 +1,40 @@
+@use 'config/variables' as variables
+
+.footer
+  border-radius: 1.5rem 1.5rem 0 0
+  background: variables.$dark-gray
+  color: variables.$white
+  text-align: center
+  @media screen and ( min-width: 450px )
+    border-radius: 3rem 3rem 0 0  
+
+  &__rights
+    text-align: center
+
+  &__desc
+    margin-top: 2rem
+
+  &-menu
+    margin-top: 3rem
+    display: flex
+    flex-direction: column
+    gap: 1.5rem
+    @media screen and ( min-width: 450px )
+      align-items: center
+      justify-content: center
+      flex-direction: row
+      gap: 0
+      font-size: 2rem
+    &__item
+      padding: 0 2rem
+      position: relative
+      &:not(:last-of-type)::after
+        @media screen and ( min-width: 450px )
+          content: ''
+          display: block
+          width: .1rem
+          height: 100%
+          background: variables.$gray
+          position: absolute
+          right: 0
+          top: 0

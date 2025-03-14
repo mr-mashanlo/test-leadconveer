@@ -1,0 +1,19 @@
+@use 'config/variables' as variables
+
+.client
+
+  &-card
+    display: flex
+    align-items: center
+    justify-content: center
+    @media screen and ( min-width: 450px )
+      padding: 7rem 4rem
+    &__image
+      width: 10rem
+      height: 6.5rem
+      object-fit: contain
+      @media screen and ( min-width: 450px )
+        width: 25rem
+
+  .swiper-slide
+    width: auto
